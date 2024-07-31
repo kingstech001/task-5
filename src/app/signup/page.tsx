@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 'use client';
 
 import React, { useState } from 'react';
@@ -116,7 +114,7 @@ const SignUp: React.FC = () => {
             Sign Up
           </button>
           <p className="text-center mt-4">
-            Already have an account?{' '}
+            Already have an account?&apos;{' '}
             <Link href="/signin" className="text-orange-500">
               Log in
             </Link>
