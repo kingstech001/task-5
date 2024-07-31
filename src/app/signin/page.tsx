@@ -24,10 +24,10 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-background">
-      <div className="w-full max-w-md bg-card rounded p-6">
-        <h1 className="text-2xl font-bold mb-4 text-center">Sign In</h1>
-        <p className="text-center text-gray-400">
+    <div className="flex justify-center items-center h-[85vh] bg-background w-full">
+      <div className="w-full max-w-[33rem] bg-card rounded p-6">
+        <h1 className="text-2xl font-bold mb-4 sm:text-center">LogIin</h1>
+        <p className="sm:text-center text-gray-400">
           Welcome back, you have been missed!
         </p>
 
@@ -74,7 +74,7 @@ const SignIn: React.FC = () => {
           <label className="block text-foreground mb-2" htmlFor="password">
             Password
           </label>
-          <div className="mb-4 relative flex">
+          <div className="mb-4 relative flex z-0">
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
@@ -107,6 +107,18 @@ const SignIn: React.FC = () => {
             Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-orange-500">
               Sign Up
+            </Link>
+          </p>
+          <p className="text-center mt-4">
+            By logging in, you agree to the {' '}
+            <Link href="/" className="text-orange-500">
+              Tearms of Service
+            </Link>
+            {' '}
+            and
+            {' '}
+            <Link href="/" className="text-orange-500">
+              Privacy Policy
             </Link>
           </p>
         </form>

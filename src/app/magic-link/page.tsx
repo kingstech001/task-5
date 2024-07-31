@@ -27,7 +27,7 @@ const MagicLink: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-background">
+    <div className="flex justify-center items-center h-[85vh] bg-background">
       <div className="w-full max-w-md bg-card rounded p-6">
         <h1 className="text-2xl font-bold mb-4 text-center">Sign In with Magic Link</h1>
         <p className="text-center text-gray-400">Enter your email to receive a magic link.</p>

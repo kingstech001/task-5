@@ -34,10 +34,10 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-background">
+    <div className="flex justify-center items-center h-[85vh] bg-background">
       <div className="w-full max-w-[30rem] bg-card rounded p-6">
-        <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
-        <p className="text-center text-gray-400">Create an account to get started with us.</p>
+        <h1 className="text-2xl font-bold mb-4 sm:text-center">Sign Up</h1>
+        <p className="sm:text-center text-gray-400">Create an account to get started with us.</p>
         <div className="mt-4 sm:flex items-center gap-2 ">
           <div className="w-full text-black py-2 rounded border-gray-300 border mb-2 flex items-center gap-2 justify-center text-xs font-medium">
             <Image src="/images/flat-color-icons_google.png" alt="Google Logo" width={20} height={20} />
@@ -92,7 +92,7 @@ const SignUp: React.FC = () => {
             <label className="block text-foreground mb-1" htmlFor="password">
               Password
             </label>
-            <div className="relative">
+            <div className="relative z-0">
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 id="password"

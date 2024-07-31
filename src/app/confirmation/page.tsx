@@ -15,8 +15,8 @@ const Confirmation: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center h-[85vh] bg-background">
-      <div className="w-full max-w-md bg-card rounded p-6 text-center">
-        <p className=" mb-4">Sent! Please check your email for the magic link.</p>
+      <div className="w-full max-w-[33rem] bg-card rounded p-6 text-center">
+        <h1 className=" mb-4 text-xl font-bold">Sent! Check your email.</h1>
         <Image
           src="/images/Vectorgood.png" // Add the path to your success image
           alt="Success"
@@ -29,7 +29,7 @@ const Confirmation: React.FC = () => {
         </p>
         <button
           onClick={handleOpenEmail}
-          className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-400 w-full"
+          className="border border-orange-500 text-orange-500 py-2 px-4 rounded hover:bg-orange-400 w-full"
         >
           Open Email
         </button>
