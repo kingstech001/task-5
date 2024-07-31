@@ -14,7 +14,7 @@ const Confirmation: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-background">
+    <div className="flex justify-center items-center h-[85vh] bg-background">
       <div className="w-full max-w-md bg-card rounded p-6 text-center">
         <p className=" mb-4">Sent! Please check your email for the magic link.</p>
         <Image
@@ -29,7 +29,7 @@ const Confirmation: React.FC = () => {
         </p>
         <button
           onClick={handleOpenEmail}
-          className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-400"
+          className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-400 w-full"
         >
           Open Email
         </button>
