@@ -86,7 +86,8 @@ const SignIn: React.FC = () => {
             Sign In
           </button>
           <p className="text-center mt-4">
-            Don't have an account?
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            Don't have an account?{' '}
             <Link href="/signup" className="text-orange-500">
               Sign Up
             </Link>
