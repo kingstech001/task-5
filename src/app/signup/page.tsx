@@ -45,11 +45,11 @@ const SignUp: React.FC = () => {
         <p className="text-center text-gray-400">Create an account to get started with us.</p>
         <div className="mt-4 sm:flex items-center gap-2 ">
           <div className="w-full text-black py-2 rounded border mb-2 flex items-center gap-2 justify-center">
-            <Image src="/images/flat-color-icons_google.png" alt="Logo" width={20} height={20} />
+            <Image src="/images/flat-color-icons_google.png" alt="Google Logo" width={20} height={20} />
             <button onClick={() => signIn('google')}>Sign Up with Google</button>
           </div>
           <div className="w-full text-black py-2 rounded border mb-2 flex items-center gap-2 justify-center">
-            <Image src="/images/vector.png" alt="Logo" width={20} height={0} />
+            <Image src="/images/vector.png" alt="Facebook Logo" width={20} height={20} />
             <button onClick={() => signIn('facebook')}>Sign Up with Facebook</button>
           </div>
         </div>
@@ -109,7 +109,7 @@ const SignUp: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 text-primary-foreground py-2 rounded hover:bg-orange-400 "
+            className="w-full bg-orange-500 text-primary-foreground py-2 rounded hover:bg-orange-400"
           >
             Sign Up
           </button>
