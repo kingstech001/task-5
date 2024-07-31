@@ -41,7 +41,7 @@ const SignIn: React.FC = () => {
             </button>
           </div>
           <div className="w-full text-black py-2 rounded border mb-2 flex items-center gap-2 justify-center">
-            <Image src="/images/vector.png" alt="Logo" width={20} height={0} />
+            <Image src="/images/vector.png" alt="Logo" width={20} height={20} />
             <button onClick={() => signIn("facebook")}>
               Sign Up with Facebook
             </button>
