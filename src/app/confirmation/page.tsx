@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
-const Confirmation: React.FC = () => {
+const ConfirmationContent: React.FC = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get('email') || ''; // Retrieve the email from search parameters
 
@@ -35,6 +35,14 @@ const Confirmation: React.FC = () => {
         </button>
       </div>
     </div>
+  );
+};
+
+const Confirmation: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmationContent />
+    </Suspense>
   );
 };
 
