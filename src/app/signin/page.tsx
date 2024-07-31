@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -11,13 +11,16 @@ const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
-
   const router = useRouter();
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle sign in logic here
     router.push("/");
+  };
+
+  const handleMagicLink = () => {
+    router.push("/magic-link");
   };
 
   return (
@@ -43,7 +46,7 @@ const SignIn: React.FC = () => {
           <div className="w-full text-black py-2 rounded border border-gray-300 mb-2 flex items-center gap-2 justify-center text-xs font-medium">
             <Image src="/images/Vector.png" alt="Logo" width={20} height={20} />
             <button onClick={() => signIn("facebook")}>
-              Sign  with Facebook
+              Sign in with Facebook
             </button>
           </div>
         </div>
@@ -94,10 +97,11 @@ const SignIn: React.FC = () => {
             Login
           </button>
           <button
-            type="submit"
+            type="button"
+            onClick={handleMagicLink}
             className="w-full bg-transparent border-[1.5px] border-gray-300 py-2 rounded"
           >
-            Signin with magic link
+            Sign in with magic link
           </button>
           <p className="text-center mt-4">
             Don&apos;t have an account?{" "}
