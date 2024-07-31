@@ -114,7 +114,7 @@ const SignUp: React.FC = () => {
             Sign Up
           </button>
           <p className="text-center mt-4">
-            Already have an account?&apos;{' '}
+            Already have an account?
             <Link href="/signin" className="text-orange-500">
               Log in
             </Link>
