@@ -12,29 +12,24 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [errors, setErrors] = useState({ name: '', email: '', password: '' });
+  const [emailError, setEmailError] = useState('');
   const router = useRouter();
 
   const validateForm = () => {
-    const newErrors = { name: '', email: '', password: '' };
-
-    if (!name) newErrors.name = 'Name is required.';
-    if (!email) {
-      newErrors.email = 'Email is required.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = 'Please enter a valid email address.';
+    let isValid = true;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError('Enter a valid email format.');
+      isValid = false;
+    } else {
+      setEmailError('');
     }
-    if (!password) newErrors.password = 'Password is required.';
-
-    setErrors(newErrors);
-
-    return !newErrors.name && !newErrors.email && !newErrors.password;
+    return isValid;
   };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-    // Handle sign up logic here
+    // Handle sign-up logic here
     router.push('/signin');
   };
 
@@ -64,25 +59,34 @@ const SignUp: React.FC = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
               placeholder="Enter your full name"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
           </div>
           <div className="mb-4">
             <label className="block text-foreground mb-1" htmlFor="email">
               Email Address
             </label>
             <input
-              type="email"
+              type="text"  // Use text type to disable default validation
               id="email"
               className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              onChange={(e) => {
+                setEmail(e.target.value);
+                // Optionally validate on change if needed
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)) {
+                  setEmailError('Enter a valid email format.');
+                } else {
+                  setEmailError('');
+                }
+              }}
               placeholder="Enter your email address"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {emailError && (
+              <p className="text-red-500 text-sm mt-1">
+                {emailError}
+              </p>
+            )}
           </div>
           <div className="mb-4">
             <label className="block text-foreground mb-1" htmlFor="password">
@@ -95,7 +99,6 @@ const SignUp: React.FC = () => {
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
                 placeholder="Enter your password"
               />
               <div
@@ -105,16 +108,15 @@ const SignUp: React.FC = () => {
                 {passwordVisible ? <AiFillEyeInvisible /> : <AiFillEye />}
               </div>
             </div>
-            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
           </div>
           <button
             type="submit"
             className="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-400"
           >
-            Ceate account
+            Create account
           </button>
           <p className="text-center mt-4">
-            Already have an account?&apos;{' '}
+            Already have an account?{' '}
             <Link href="/signin" className="text-orange-500">
               Log in
             </Link>
