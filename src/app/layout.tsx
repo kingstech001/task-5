@@ -1,5 +1,6 @@
 import './globals.css';
 import { ReactNode } from 'react';
+import Navbar from './ui/navbar';
 
 type LayoutProps = {
   children: ReactNode;
@@ -14,8 +15,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <header className="bg-background">
-        </header>
+        <Navbar/>
         <main>{children}</main>
       </body>
     </html>

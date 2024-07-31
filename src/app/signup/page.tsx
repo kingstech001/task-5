@@ -44,24 +44,24 @@ const SignUp: React.FC = () => {
         <h1 className="text-2xl font-bold mb-4 text-center">Sign Up</h1>
         <p className="text-center text-gray-400">Create an account to get started with us.</p>
         <div className="mt-4 sm:flex items-center gap-2 ">
-          <div className="w-full text-black py-2 rounded border mb-2 flex items-center gap-2 justify-center">
+          <div className="w-full text-black py-2 rounded border-gray-300 border mb-2 flex items-center gap-2 justify-center text-xs font-medium">
             <Image src="/images/flat-color-icons_google.png" alt="Google Logo" width={20} height={20} />
             <button onClick={() => signIn('google')}>Sign Up with Google</button>
           </div>
-          <div className="w-full text-black py-2 rounded border mb-2 flex items-center gap-2 justify-center">
-            <Image src="/images/vector.png" alt="Facebook Logo" width={20} height={20} />
+          <div className="w-full text-black py-2 rounded border border-gray-300 mb-2 flex items-center gap-2 justify-center text-xs font-medium">
+            <Image src="/images/Vector.png" alt="Facebook Logo" width={20} height={20} />
             <button onClick={() => signIn('facebook')}>Sign Up with Facebook</button>
           </div>
         </div>
         <form onSubmit={handleSignUp}>
           <div className="mb-4">
             <label className="block text-foreground mb-1" htmlFor="name">
-              Name
+              Full Name
             </label>
             <input
               type="text"
               id="name"
-              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -71,12 +71,12 @@ const SignUp: React.FC = () => {
           </div>
           <div className="mb-4">
             <label className="block text-foreground mb-1" htmlFor="email">
-              Email
+              Email Address
             </label>
             <input
               type="email"
               id="email"
-              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -92,7 +92,7 @@ const SignUp: React.FC = () => {
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 id="password"
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -109,9 +109,9 @@ const SignUp: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 text-primary-foreground py-2 rounded hover:bg-orange-400"
+            className="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-400"
           >
-            Sign Up
+            Ceate account
           </button>
           <p className="text-center mt-4">
             Already have an account?&apos;{' '}
